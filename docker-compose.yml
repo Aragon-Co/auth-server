@@ -1,0 +1,48 @@
+version: '3.6'
+
+x-common: &common
+    tty: true
+    networks:
+        - auth-server
+
+services:
+    auth-server:
+        container_name: auth-server
+        <<: *common
+        image: auth-server-dev:latest
+        build:
+            context: '.'
+        env_file:
+            - .env
+        ports:
+            - 4000:4000
+
+    migrations:
+        container_name: auth-server-migrations
+        <<: *common
+        build:
+            context: '.'
+            dockerfile: ./docker/Dockerfile.dev
+        depends_on:
+            - db
+        command: sh -c "/scripts/wait-for-it.sh db:27017 -- yarn migrate:up"
+        env_file:
+            - .env
+        volumes:
+            - ./src:/app/src:cached
+            - ./migrations:/app/migrations:cached
+            - ./scripts:/scripts/:cached
+
+    db:
+        container_name: mongodb
+        <<: *common
+        restart: on-failure
+        image: mongo
+        ports:
+            - 27017:27017
+        volumes:
+            - ./docker/volumes/app-db:/data/db
+
+networks:
+    auth-server:
+        name: auth-server

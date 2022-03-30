@@ -1,0 +1,23 @@
+FROM node:14.15.5-alpine
+
+RUN apk add --no-cache bash
+
+# Create app directory
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn config set "strict-ssl" false
+
+ENV NODE_ENV=development
+
+# Note, this is a faster alternative to yarn. It depends on
+# yarn.lock so ensure all minor and patch versions are specified as you
+# want them to be.
+RUN yarn install --frozen-lockfile
+
+# These are also mapped as volumes for quick nodemon changes
+COPY src ./src
+COPY tsconfig.json ./tsconfig.json
+
+# Override command in docker for other entrypoints
+CMD [ "yarn", "start:dev" ]

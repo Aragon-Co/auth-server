@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+    auth-server:
+        image: auth-server-prod:latest
+        command: yarn start
+        build:
+            context: './docker/Dockerfile.prod'
+        ports:
+            - 4000:4000
+        environment:
+            - NODE_ENV=production

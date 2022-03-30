@@ -1,3 +1,6 @@
+# mongo
+volumes
+
 # Logs
 logs
 *.log
