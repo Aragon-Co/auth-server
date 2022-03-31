@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import * as mongoose from 'mongoose'
 import { loadConfig } from '../src/config'
 
 import { UserModel } from '../src/graphql/entites/user.type'

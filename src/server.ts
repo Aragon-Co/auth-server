@@ -3,12 +3,12 @@ import * as dotenv from 'dotenv'
 /* eslint-disable import/first */
 dotenv.config()
 
-import https from 'https'
-import express from 'express'
-import http from 'http'
-import mongoose from 'mongoose'
-import passport from 'passport'
-import cookieParser from 'cookie-parser'
+import * as https from 'https'
+import * as express from 'express'
+import * as http from 'http'
+import * as mongoose from 'mongoose'
+import * as passport from 'passport'
+import * as cookieParser from 'cookie-parser'
 import { ApolloServer } from 'apollo-server-express'
 
 import buildSchema from './graphql'

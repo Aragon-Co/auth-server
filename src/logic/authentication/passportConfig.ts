@@ -1,4 +1,4 @@
-import passport from 'passport'
+import * as passport from 'passport'
 import webServerConfig from '../../config'
 import useGoogleStrategy from './useGoogleStrategy'
 

@@ -1,5 +1,5 @@
-import cors from 'cors'
-import jwt from 'express-jwt'
+import * as cors from 'cors'
+import * as jwt from 'express-jwt'
 import { RequestHandler } from 'express'
 
 export const getCorsMiddleware = (corsOptions: cors.CorsOptions): RequestHandler => cors(corsOptions)

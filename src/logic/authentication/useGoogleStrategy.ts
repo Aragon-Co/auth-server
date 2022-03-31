@@ -1,6 +1,6 @@
 import Container from 'typedi'
-import passport from 'passport'
-import passportGoogle from 'passport-google-oauth20'
+import * as passport from 'passport'
+import * as passportGoogle from 'passport-google-oauth20'
 import GoogleProfile from './GoogleProfile'
 import UserService from '../user/UserService'
 
