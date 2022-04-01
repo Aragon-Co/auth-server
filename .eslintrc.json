@@ -3,7 +3,7 @@
 		"es2021": true,
 		"node": true
 	},
-	"ignorePatterns": ["node_modules/*", "dist/*", "!.prettierrc.js"],
+	"ignorePatterns": ["node_modules/*", "dist/*", "!.prettierrc.js", "jest.config.ts"],
 	"extends": ["airbnb-base", "airbnb-typescript/base", "prettier"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {

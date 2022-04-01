@@ -4,19 +4,19 @@
 # -----------------------------------------------
 
 type Query {
-	getUser(id: String!): User!
+  getUser(id: String!): User!
 }
 
 type User {
-	_id: String!
-	createdDateTimeUTC: String!
-	email: String!
-	firstName: String!
-	lastName: String!
-	locale: String!
-	picture: String!
-	provider: String!
-	scopes: [String!]!
-	updatedDateTimeUTC: String!
-	username: String!
+  _id: String!
+  createdDateTimeUTC: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  locale: String!
+  picture: String!
+  provider: String!
+  scopes: [String!]!
+  updatedDateTimeUTC: String!
+  username: String!
 }
