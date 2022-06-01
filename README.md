@@ -2,22 +2,20 @@
 
 Authentication Micro Server
 
-## Functionallity
+## Development
 
-oauth
+Google Oauth
 
-key + user storage + email verification)
+1. Configure .env file with variables located in .evn.example
 
-Steps:
+2. `docker-compose build` and ``docker-compose up`
 
-1. Need eslint airbn configuration
-2. Need to publish code to github
+3. Go to localhost:4000/authenticate/google
 
-3. Need script to create docker image + tag + publish
-4. need to configure jest
-5. Implement other forms of authentication
+## Future work
 
-Considerations:
-What is the difference between adding jwt tokens in url vs cookie
+Support:
 
-Should we store refresh tokens in database, what are the benefits
+-   Github Strategy
+-   Linkedin Strategy
+-   Outlook Strategy
